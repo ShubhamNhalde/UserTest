@@ -1,0 +1,6 @@
+employeeId,firstName,lastName,email,gender,contactNo,department,date,salary
+1,Ramesh,Sharma,ramesh@gmail.com,Male,970-613-2617,HR,24-06-2012,25000
+2,Sita,Kumar,sita1@go.com,Female,614-319-7266,Engineering,18-09-2018,31000
+3,Gita,Pawar,gita2@mit.edu,Female,997-395-9270,marketing,12-05-2016,45000
+4,Rohit,Varma,rohit3@ucla.edu,Male,592-563-0424,Planning,08-04-2019,40000
+5,Prasad,Joshi,prasad4@engadget.com,Male,343-984-1150,Admin,19-10-2022,80000
