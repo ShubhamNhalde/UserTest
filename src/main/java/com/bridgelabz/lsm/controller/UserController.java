@@ -41,4 +41,34 @@ public class UserController {
         ResponseDTO response = new ResponseDTO("User Login successefully: ", service.loginUser(dto));
         return new ResponseEntity<ResponseDTO>(response,HttpStatus.OK);
     }
+
+
+    @GetMapping({"/findById/{token}"})
+    public ResponseEntity<ResponseDTO> getById(@PathVariable String token) {
+        User user = this.service.getById(token);
+        ResponseDTO response = new ResponseDTO("Requested User : ", user);
+        return new ResponseEntity(response, HttpStatus.OK);
+    }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<ResponseDTO> forgotPassword(@RequestParam String email){
+        String user = service.forgotPassword(email);
+        ResponseDTO response = new ResponseDTO("Forgot password", user);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @PutMapping("/reset-password")
+    public ResponseEntity<ResponseDTO> resetPassword(@RequestParam String token, @RequestParam String password){
+
+        String user = service.resetPassword(token, password);
+        ResponseDTO response = new ResponseDTO("Reset Password", user);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    //to delete specific user using token provided
+    @DeleteMapping({"/delete/{token}"})
+    public ResponseEntity<ResponseDTO> deleteById(@PathVariable String token) {
+        ResponseDTO response = new ResponseDTO("User deleted successfully", service.deleteById(token));
+        return new ResponseEntity(response, HttpStatus.OK);
+    }
 }

@@ -3,11 +3,9 @@ package com.bridgelabz.lsm.model;
 import com.bridgelabz.lsm.dto.UserDTO;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Data
@@ -23,8 +21,12 @@ public class User {
     private String mobileNumber;
     private String email;
     private String password;
+    private String token;
     private String dateOfBirth;
     private LocalDate date = LocalDate.now();
+
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime tokenCreationDate;
 
     public User(UserDTO dto) {
         super();

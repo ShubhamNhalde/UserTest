@@ -14,5 +14,12 @@ public interface IUserService {
 
     User loginUser(LoginDTO dto);
 
+    User getById(String token);
+
+    String forgotPassword(String email);
+
+    String resetPassword(String token, String password);
+
+    Object deleteById(String token);
 
 }
